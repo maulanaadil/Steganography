@@ -58,6 +58,8 @@ def dec_alg(original_pic: string, encode_pic: string):
         txt = ''.join(decodedTxt)
         rev = txt[:1]+'b'+txt[1:]
         n = int(rev, 2)
+        # TODO: Include why reason value is 7
+        # TODO: Fix image transparent issue
         message = n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
         return message
     except:
