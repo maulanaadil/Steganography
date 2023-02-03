@@ -14,8 +14,11 @@ def save_image(image: Image):
     _, ext = os.path.splitext(image.filename)
     fn = secrets.token_hex(4)+'_'+'org'+ext
     pic_path = os.path.join(app.root_path, "static/org_pic", fn)
-    i = Image.open(image)
-    i.save(pic_path)
+    pic_e_path = os.path.join(app.root_path, "static/enc_pic", fn)
+    image_o = Image.open(image).save(pic_path)
+    image_e = Image.open(image).save(pic_e_path)
+    print('------------------', pic_path)
+    print('------------------', pic_e_path)
     print('saved')
     return pic_path
 

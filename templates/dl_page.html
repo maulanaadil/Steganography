@@ -13,6 +13,13 @@
         download
         >Download encoded image</a
       >
+      <b>Original image: </b>
+      <a
+        class="btn btn-outline-dark btn-sm"
+        href="{{ url_for('static', filename = 'org_pic/'+im_ret) }}"
+        download
+        >Download original image</a
+      >
     </p>
     <img
       class="js-img border border-primary"
