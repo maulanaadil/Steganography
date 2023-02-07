@@ -11,5 +11,11 @@ COPY static /opt/static
 COPY app.py /opt/
 COPY templates /opt/templates
 WORKDIR /opt/
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade setuptools
+RUN pip3 install --upgrade wheel
+RUN pip3 install --upgrade scikit-build
+RUN pip3 install opencv-python --verbose
 RUN pip3 install -r requirements.txt
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
